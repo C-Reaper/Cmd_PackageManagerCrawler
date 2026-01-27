@@ -2,8 +2,8 @@
 #include "/home/codeleaded/System/Static/Library/LibCrawler.h"
 
 int main() {
-    PackageManager pm = PackageManager_New(".","./PackageManager.yaml");
-    PackageManager_LoadCrawl(&pm);
+    PackageManager pm = PackageManager_New("inc","./PackageManager.yaml");
+    PackageManager_LoadCrawl(&pm,"./src/Main.c");
     PackageManager_Free(&pm);
     return 0;
 }

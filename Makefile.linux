@@ -12,11 +12,9 @@ PM = $(BUILD_DIR)/PackageManager
 
 all:
 	$(CC) $(CFLAGS) $(INCLUDES) $(SRC_DIR)/Main.c -o $(TARGET) $(LDFLAGS)
-	$(CC) $(CFLAGS) $(INCLUDES) $(SRC_DIR)/PackageManager.c -o $(PM) $(LDFLAGS)
 
 alldebug:
 	$(CC) -g $(CFLAGS) $(INCLUDES) ./$(SRC_DIR)/Main.c -o ./$(TARGET) $(LDFLAGS) 
-	$(CC) $(CFLAGS) $(INCLUDES) $(SRC_DIR)/PackageManager.c -o $(PM) $(LDFLAGS)
 
 $(BUILD_DIR):
 	mkdir -p $(BUILD_DIR)
@@ -28,6 +26,7 @@ exe:
 	./$(TARGET)
 
 pm:
+	$(CC) $(CFLAGS) $(INCLUDES) $(SRC_DIR)/PackageManager.c -o $(PM) $(LDFLAGS)
 	./$(PM)
 
 clean:
