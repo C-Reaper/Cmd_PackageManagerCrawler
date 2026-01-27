@@ -49,7 +49,7 @@ void Array_Print(Array* a){
         printf("  Element %d: ",i);
         char* Item = (char*)Array_Get(a,i);
         for(int j = 0;j<a->ELEMENT_SIZE;j++){
-            printf("%2x",(int)Item[j]);
+            printf("%c",Item[j]);
         }
         printf("\n");
     }

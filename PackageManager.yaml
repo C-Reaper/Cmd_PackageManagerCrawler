@@ -1,12 +1,20 @@
-dependencies:
-  Container:
+dependencies: 
+  Container: 
     Array: 0.0
     Vector: 0.0
-  Library:
+  Library: 
     AffineTransform: 0.0
-    Allocator: 0.0
-    AlxCallStack: 0.0
-    AlxFont: 0.0
-    AlxThrow: 0.0
-    AST: 0.0
-  
+    Compare: 0.0
+    Math: 0.0
+    Rect: 0.0
+    Integer: 0.0
+    Float: 0.0
+    Complex2: 0.0
+    Vector2: 0.0
+    Victor2: 0.0
+    Vdctor2: 0.0
+    Vector3: 0.0
+    Vector4: 0.0
+    Intrinsics: 0.0
+    Line: 0.0
+    Point: 0.0
