@@ -1,193 +1,103 @@
-# Cmd_PackageManagerCrawler
+# Project README
 
+## Overview
+This project is a simple command-line tool designed to manage and crawl source code files. It uses a configuration file in YAML format to define the directories and files to be processed.
 
-## Project Overview
+## Features
+- **Package Management**: Loads and manages packages from specified directories.
+- **Source Code Crawling**: Crawls through source files (.c, .h) within specified directories.
+- **Configuration**: Uses a YAML file for configuration settings.
 
-This project implements specialized functionality related to packagemanagercrawler.
-
-## Core Components
-
-### Main Functionality
-- Implements core algorithms for packagemanagercrawler
-- Efficient data structures
-- Optimized performance
-- Clean code organization
-
-### Technical Features
-- C/C++ implementation
-- Dynamic memory management
-- Platform-independent design
-- Real-time capable
-
-### Architecture
-- Module separation
-- Clear interface design
-- Proper abstraction layers
-- Extensible design
-
-## Use Cases
-- Production systems
-- Educational purposes
-- Research applications
-- Performance-critical operations
-
-## Performance Characteristics
-- Optimized algorithms
-- Efficient memory usage
-- Scalable architecture
-- Minimal overhead
-
-## Implementation Quality
-- Well-organized code
-- Meaningful naming
-- Proper error handling
-- Memory management
-
-## Build and Deployment
-- Standard C/C++ compilation
-- Makefile-based building
-- Cross-platform support
-- Easy integration
-
-
-## Building the Project
+## Project Structure
 
 ### Prerequisites
-- C/C++ Compiler (GCC, Clang, or MSVC)
+- C/C++ Compiler (GCC)
 - Make utility
 - Standard development tools
+- Libraries needed for YAML parsing (libyaml)
 
-### Build Steps
+## Build & Run
 
-1. Navigate to project directory:
-```bash
-cd Cmd_PackageManagerCrawler
+### Linux Build and Execution
+1. Navigate to the project directory.
+2. To build the project:
+   ```bash
+   make -f Makefile.linux all
+   ```
+3. To clean the build artifacts:
+   ```bash
+   make -f Makefile.linux clean
+   ```
+4. To execute the built binary:
+   ```bash
+   ./bin/PackageManager
+   ```
+
+### Windows Build and Execution
+1. Navigate to the project directory.
+2. To build the project:
+   ```cmd
+   make -f Makefile.windows all
+   ```
+3. To clean the build artifacts:
+   ```cmd
+   make -f Makefile.windows clean
+   ```
+4. To execute the built binary (assuming it is named `PackageManager.exe`):
+   ```cmd
+   bin\PackageManager.exe
+   ```
+
+### Wine Build and Execution (Linux Cross Compile for Windows)
+1. Navigate to the project directory.
+2. To build the project:
+   ```bash
+   make -f Makefile.wine all
+   ```
+3. To clean the build artifacts:
+   ```bash
+   make -f Makefile.wine clean
+   ```
+4. To execute the built binary (assuming it is named `PackageManager.exe`):
+   ```cmd
+   bin\PackageManager.exe
+   ```
+
+### WebAssembly Build and Execution (Emscripten)
+1. Navigate to the project directory.
+2. To build the project:
+   ```bash
+   make -f Makefile.web all
+   ```
+3. To clean the build artifacts:
+   ```bash
+   make -f Makefile.web clean
+   ```
+4. To execute the built WebAssembly module (assuming it is named `PackageManager.js`):
+   ```html
+   <script src="bin/PackageManager.js"></script>
+   ```
+
+# Project Organization
 ```
-
-2. Build the project:
-```bash
-make -f Makefile.(os) all
-```
-
-3. For clean rebuild:
-```bash
-make -f Makefile.(os) clean
-make -f Makefile.(os) all
-```
-
-4. If there are ./bin and ./libs directories, build libs with:
-```bash
-make -f Makefile.(os) cleanlib
-make -f Makefile.(os) lib
-```
-
-### Build Options
-```bash
-make -f Makefile.(os) all         # build output
-make -f Makefile.(os) do        # build + exe output
-make -f Makefile.(os) clean   # Remove build artifacts
-```
-
-## Running the Project
-
-Execute the compiled binary:
-
-```bash
-./build/Main(.exe)
-```
-
-Or using make:
-```bash
-make -f Makefile.(os) exe
-```
-
-## Project Organization
-
-```
-Cmd_PackageManagerCrawler/
-├── src/
+<Project>/
+├── build/              # .exe files produced by Main.c
+├── bin/                # .so / .dll produced by *.c in libs
+├── libs/               # *.c for bin
+├── lib/                # librarys for my own languages
+├── code/               # scripts from my custom languages for example .rex, .ll, .omml
+├── data/               # Datafile for example .txt or dumped files
+├── assets/             # images and sound files
+├── src/                # src code
 │   ├── Main.c          # Entry point
-│   └── *.c             # Implementation files
-├── Makefile            # Build configuration
+│   └── *.h             # stand alone Header-based C-files, without *.c files that implement it
+├── Makefile.linux      # Linux Build configuration
+├── Makefile.windows    # Windows Build configuration
+├── Makefile.wine       # Wine Build configuration
+├── Makefile.web        # Emscripten Build configuration
 └── README.md           # This file
+└── LICENCE
+└── .gitignore
 ```
 
-## Technical Details
-
-### Language: C/C++
-- Performance-oriented
-- Direct hardware access where needed
-- Memory efficient
-- Widely portable
-
-### Key Technologies
-- Standard C library
-- System-specific libraries as needed
-- Algorithm optimization
-- Efficient data structures
-
-### Code Quality
-- Clean, readable implementation
-- Proper error handling
-- Resource management
-- Well-documented algorithms
-
-## Development Notes
-
-### Architecture Decisions
-- Modular design for reusability
-- Efficient algorithms for performance
-- Clear separation of concerns
-- Extensible structure
-
-### Performance Optimizations
-- Algorithm efficiency
-- Memory layout optimization
-- Cache-conscious programming
-- Minimal overhead
-
-### Portability
-- Cross-platform compatible
-- Platform-specific optimizations where possible
-- Standard library usage
-- No external dependencies (where feasible)
-
-## Troubleshooting
-
-### Build Issues
-- Ensure compiler is installed
-- Check file paths and permissions
-- Verify Make installation
-- Review compiler error messages
-
-### Runtime Issues
-- Check input data validity
-- Verify file accessibility
-- Ensure sufficient memory
-- Review output format
-
-### Performance Issues
-- Check compiler optimization flags
-- Profile hot code paths
-- Review algorithm complexity
-- Consider input size
-
-## Future Improvements
-
-Potential enhancements:
-- Additional optimization opportunities
-- Extended functionality
-- Platform-specific optimizations
-- Performance profiling
-
-## References
-
-For technical background:
-- Algorithm textbooks
-- Computer science references
-- Language documentation
-- Online educational resources
-
----
-
-*Project implementing practical algorithms and data structures in C/C++*
+The project includes specific makefiles for different operating systems to facilitate building and cleaning the project. The `src` directory contains only `Main.c` and other header files, without any `.c` files that implement them.
